@@ -1,0 +1,11 @@
+node_modules/
+release/
+release-*/
+release-build/
+release-new/
+release-final/
+backup/
+*.exe
+*.log
+~$*.xlsx
+devis-renovation-src.zip

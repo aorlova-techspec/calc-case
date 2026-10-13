@@ -1,0 +1,540 @@
+{
+  "units": [
+    "M2",
+    "ML",
+    "U"
+  ],
+  "works": [
+    {
+      "id": "w1",
+      "name": "ENDUIT / REBOUCHAGE ET FINITIONS",
+      "price": 7,
+      "unit": "M2"
+    },
+    {
+      "id": "w2",
+      "name": "ÉTANCHÉITÉ SOUS CARRELAGE MURAL",
+      "price": 19.5,
+      "unit": "M2"
+    },
+    {
+      "id": "w3",
+      "name": "pose primaire d'accrochage",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w4",
+      "name": "FOURNITURE CARRELAGE / COLLE ET JOINT INCLUS (pour 25€/m2)",
+      "price": 49.5,
+      "unit": "M2"
+    },
+    {
+      "id": "w5",
+      "name": "FOURNITURE ET POSE CLOISON BA13 AVEC ISOLANT 45 mm",
+      "price": 35,
+      "unit": "M2"
+    },
+    {
+      "id": "w6",
+      "name": "FOURNITURE ET POSE D'UNE CLOISON BA13 HYDROFUGE AVEC ISOLANT 45 mm",
+      "price": 30,
+      "unit": "M2"
+    },
+    {
+      "id": "w7",
+      "name": "FOURNITURE ET POSE D'UNE CLOISON BA13 PHONIQUE AVEC ISOLANT 200 mm",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w8",
+      "name": "FOURNITURE  ET POSE D'UN BA13 COLLÉ",
+      "price": 15,
+      "unit": "M2"
+    },
+    {
+      "id": "w9",
+      "name": "FOURNITURE ET POSE D'UN BA13 HYDROFUGE COLLÉ",
+      "price": 18,
+      "unit": "M2"
+    },
+    {
+      "id": "w10",
+      "name": "FOURNITURE ET POSE D’UN PLAFOND EN BA13 + ISOLATION 300MM",
+      "price": 45,
+      "unit": "M2"
+    },
+    {
+      "id": "w11",
+      "name": "FOURNITURE ET POSE D’UN PLAFOND EN BA13 + ISOLATION 140MM",
+      "price": 45,
+      "unit": "M2"
+    },
+    {
+      "id": "w12",
+      "name": "FOURNITURE ET POSE D’UN PLAFOND EN BA13 PHONIQUE+ ISOLATION 200MM+BANDES ISOLAPRO",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w13",
+      "name": "REMPLACEMENT PLACO DEGRADE PAR BA13 HYDRO",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w14",
+      "name": "FOURNITURE D’UN PLAFOND EN BA13 AUTOPORTÉ",
+      "price": 25.5,
+      "unit": "M2"
+    },
+    {
+      "id": "w15",
+      "name": "FOURNITURE D’UN PLAFOND EN BA13 HYDROFUGE",
+      "price": 28,
+      "unit": "M2"
+    },
+    {
+      "id": "w16",
+      "name": "FOURNITURE D’UN PLAFOND EN BA13 HYDROFUGE AUTOPORTÉ",
+      "price": 28,
+      "unit": "M2"
+    },
+    {
+      "id": "w17",
+      "name": "FOURNITURE ET POSE D'UN DOUBLAGE BA13 HYDROFUGE SUR OSSATURE METALLIQUE",
+      "price": 28,
+      "unit": "M2"
+    },
+    {
+      "id": "w18",
+      "name": "FOUTNITURE ET POSE D'UN DOUBLAGE BA13 SUR OSSATURE METALLIQUE + ISOLATION 45MM",
+      "price": 25,
+      "unit": "M2"
+    },
+    {
+      "id": "w19",
+      "name": "FOUTNITURE ET POSE D'UN DOUBLAGE BA13 PHONIQUE SUR OSSATURE METALLIQUE + ISOLATION 200MM+BANDES ISOLA PRO",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w20",
+      "name": "FOUTNITURE ET POSE D'UN DOUBLAGE BA13 PHONIQUE SUR OSSATURE METALLIQUE + ISOLATION 45MM+BANDES ISOLA PRO",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w21",
+      "name": "FOURNITURE FAÏENCE / COLLE ET JOINT INCLUS (pour 25€/m2)",
+      "price": 49.5,
+      "unit": "M2"
+    },
+    {
+      "id": "w22",
+      "name": "FOURNITURE ISOLANT EP.100",
+      "price": 4.5,
+      "unit": "M2"
+    },
+    {
+      "id": "w23",
+      "name": "FOURNITURE PARQUET MASSIF CONTRECOLLÉ / SOUS-COUCHE, COLLE ET PLINTHES INCLUS (pour 45€/m2)",
+      "price": 74,
+      "unit": "M2"
+    },
+    {
+      "id": "w24",
+      "name": "POSE PARQUET  CONTRECOLLE + SOUS-COUCHE",
+      "price": 35,
+      "unit": "M2"
+    },
+    {
+      "id": "w25",
+      "name": "FOURNITURE ET POSE PLINTHES",
+      "price": 8,
+      "unit": "ML"
+    },
+    {
+      "id": "w26",
+      "name": "POSE PLINTHES",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w27",
+      "name": "FOURNITURE TABLIER DE BAIGNOIRE",
+      "price": 77,
+      "unit": "M2"
+    },
+    {
+      "id": "w28",
+      "name": "JOINTEMENT DE PLAQUE BA13 PAR BANDES",
+      "price": 5,
+      "unit": "ML"
+    },
+    {
+      "id": "w29",
+      "name": "POSE BANDES PLACO + ENDUIT + LISSAGE ET PONCAGE",
+      "price": 15,
+      "unit": "ML"
+    },
+    {
+      "id": "w30",
+      "name": "PONCAGE MURS + PLAFOND",
+      "price": 15,
+      "unit": "M2"
+    },
+    {
+      "id": "w31",
+      "name": "PEINTURE PLAFOND BLANC  MAT / IMPRESSION + 2 COUCHES + FOURNITURE",
+      "price": 37,
+      "unit": "M2"
+    },
+    {
+      "id": "w32",
+      "name": "PEINTURE  MUR BLANC MAT VELOUTÉ / IMPRESSION + 2 COUCHES + FOURNITURE",
+      "price": 34,
+      "unit": "M2"
+    },
+    {
+      "id": "w33",
+      "name": "POSE D’UN JOINT ACRYLIQUE",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w34",
+      "name": "TOILE RÉNOVATION",
+      "price": 8,
+      "unit": "M2"
+    },
+    {
+      "id": "w35",
+      "name": "FOURNITURE PROFILÉ FINITION ALU",
+      "price": 15,
+      "unit": "ML"
+    },
+    {
+      "id": "w36",
+      "name": "FOURNITURE ER POSE PLINTHE MDF BLANC 10X100MM",
+      "price": 6,
+      "unit": "ML"
+    },
+    {
+      "id": "w37",
+      "name": "FOURNITURE BARRE DE SEUIL",
+      "price": 21,
+      "unit": "U"
+    },
+    {
+      "id": "w38",
+      "name": "FOURNITURE ET POSE D’UNE PORTE INTÉRIEURE ISOPLANE (73CM)",
+      "price": 130,
+      "unit": "U"
+    },
+    {
+      "id": "w39",
+      "name": "FOURNITURE ET POSE D’UNE PORTE INTÉRIEURE  (83CM)",
+      "price": 150,
+      "unit": "U"
+    },
+    {
+      "id": "w40",
+      "name": "FOURNITURE ET POSE D’UNE PORTE INTÉRIEURE SAPIN",
+      "price": 120,
+      "unit": "U"
+    },
+    {
+      "id": "w41",
+      "name": "FOURNITURE ET POSE PEINTURE PORTE INT. BLC MAT / IMPRESSION + 2 COUCHES",
+      "price": 60,
+      "unit": "U"
+    },
+    {
+      "id": "w42",
+      "name": "DEMOLITION /DEPOSE CUISINE+ MODEFICATION RESEAU DE EVACUATION",
+      "price": 20,
+      "unit": "M2"
+    },
+    {
+      "id": "w43",
+      "name": "DEMOLITION /DEPOSE CLOISON",
+      "price": 20,
+      "unit": "M2"
+    },
+    {
+      "id": "w44",
+      "name": "DEMOLITION MUR A BRIQUE",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w45",
+      "name": "DEMOLITION /  DEPOSE REVETEMENT DE SOL /",
+      "price": 10,
+      "unit": "M2"
+    },
+    {
+      "id": "w46",
+      "name": "PROTECTION DU CHANTIER",
+      "price": 7,
+      "unit": "M2"
+    },
+    {
+      "id": "w47",
+      "name": "DEPOSE REVETEMENT MURAL / DETAPISSAGE MUR",
+      "price": 300,
+      "unit": "U"
+    },
+    {
+      "id": "w48",
+      "name": "ENLEVMENT ET TRAITEMENT  DES DECHETS",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w49",
+      "name": "Forfait Main d'œuvre",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w50",
+      "name": "Forfait Matériel",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w51",
+      "name": "pose d'une natte d'étanchéité mural",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w52",
+      "name": "pose d'une natte d'étanchéité sol",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w53",
+      "name": "pose carrelage / colle et joint inclus",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w54",
+      "name": "pose faïence / colle et joint inclus",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w55",
+      "name": "Fourniture et pose barre de seuil",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w56",
+      "name": "Fourniture et pose carrelage / colle et joint inclus",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w57",
+      "name": "Fourniture et pose faïence / colle et joint inclus",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w58",
+      "name": "Fourniture et pose parquet stratifié / sous-couche inclus",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w59",
+      "name": "Fourniture et pose parquet stratifié / sous-couche inclus Fourniture et pose d’une porte isoplane 73",
+      "price": null,
+      "unit": "M2"
+    },
+    {
+      "id": "w60",
+      "name": "Fourniture et pose porte isoplane double (à déterminer)",
+      "price": 25,
+      "unit": "U"
+    },
+    {
+      "id": "w61",
+      "name": "REBOUCHAGE TROU",
+      "price": 30,
+      "unit": "M2"
+    },
+    {
+      "id": "w62",
+      "name": "FOURNITURE ET POSE ISOLATION  POLYSTYRENE PLANCHER",
+      "price": 20,
+      "unit": "M²"
+    },
+    {
+      "id": "w63",
+      "name": "POSE LAME PVC",
+      "price": 30,
+      "unit": "M²"
+    },
+    {
+      "id": "w64",
+      "name": "FOURNITURE LAME PVC IMITATION BOIS",
+      "price": null,
+      "unit": "M2"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "r1",
+      "name": "Chambre 1"
+    },
+    {
+      "id": "r2",
+      "name": "Chambre 2"
+    },
+    {
+      "id": "r3",
+      "name": "Chambre 3"
+    },
+    {
+      "id": "r4",
+      "name": "Chambre 4"
+    },
+    {
+      "id": "r5",
+      "name": "Chambre 5"
+    },
+    {
+      "id": "r6",
+      "name": "Chambre 6"
+    },
+    {
+      "id": "r7",
+      "name": "Chambre 7"
+    },
+    {
+      "id": "r8",
+      "name": "Chambre 8"
+    },
+    {
+      "id": "r9",
+      "name": "Chambre 9"
+    },
+    {
+      "id": "r10",
+      "name": "Chambre 10"
+    },
+    {
+      "id": "r11",
+      "name": "Couloir 1"
+    },
+    {
+      "id": "r12",
+      "name": "Couloir 2"
+    },
+    {
+      "id": "r13",
+      "name": "Couloir 3"
+    },
+    {
+      "id": "r14",
+      "name": "Couloir 4"
+    },
+    {
+      "id": "r15",
+      "name": "Cuisine"
+    },
+    {
+      "id": "r16",
+      "name": "Entrée"
+    },
+    {
+      "id": "r17",
+      "name": "Entrée / couloir"
+    },
+    {
+      "id": "r18",
+      "name": "Salle à manger"
+    },
+    {
+      "id": "r19",
+      "name": "Salle d'eau 1"
+    },
+    {
+      "id": "r20",
+      "name": "Salle d'eau 2"
+    },
+    {
+      "id": "r21",
+      "name": "Salle de bain 1"
+    },
+    {
+      "id": "r22",
+      "name": "Salle de bain 2"
+    },
+    {
+      "id": "r23",
+      "name": "Salon"
+    },
+    {
+      "id": "r24",
+      "name": "WC 1"
+    },
+    {
+      "id": "r25",
+      "name": "WC 2"
+    },
+    {
+      "id": "r26",
+      "name": "Buanderie"
+    },
+    {
+      "id": "r27",
+      "name": "Cave"
+    },
+    {
+      "id": "r28",
+      "name": "Cellier"
+    },
+    {
+      "id": "r29",
+      "name": "Garage"
+    },
+    {
+      "id": "r30",
+      "name": "Terrasse"
+    }
+  ],
+  "company": {
+    "header": "Dupont Rénovation, 12 rue des Tests, 44000 Nantes",
+    "title": "Descriptif des travaux : rénovation",
+    "validity": "1 mois",
+    "signature": "Le client, date et signature précédées de la mention « Bon pour accord » :",
+    "conditions": [
+      "Conditions de règlement :",
+      "Taux d'escompte : pas d'escompte pour paiement anticipé.",
+      "Taux de pénalité : en cas de retard de paiement, application d'intérêts de 3 fois le taux légal selon la loi n°2008-776 du 4 août 2008.  du devis.",
+      "Acompte de 30% du montant total TTC à verser à l’acceptation du devis.",
+      "Paiement à la réception de situations mensuelles selon avancement des travaux.",
+      "Paiement du solde à la livraison.",
+      "Modalités de règlement :",
+      "Virement bancaire IBAN FR76 0000 0000 0000 0000 0000 000 / SWIFT TESTFRPP",
+      "Espèces ou chèque à l'ordre de : Dupont Rénovation",
+      "Contact : M. Dupont Jean - 06 00 00 00 00 - contact@example.com",
+      "SIRET: 00000000000000",
+      "Assurance décennale n°TEST000000/00000 souscrite auprès de TEST Assurance - 1 rue des Tests 44000 Nantes"
+    ]
+  },
+  "settings": {
+    "tvaRate": 0,
+    "acompteRate": 0.3,
+    "tvaLabel": "TVA non applicable - art. 293B du CGI"
+  }
+}

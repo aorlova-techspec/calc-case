@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; frame-src 'self' data:;">
+<title>Devis Rénovation — калькулятор ремонта</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo"><span></span><span></span><span></span></div>
+      <div class="brand-text">
+        <strong>Devis Rénovation</strong>
+        <small>калькулятор стоимости ремонта</small>
+      </div>
+    </div>
+
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="calc">Калькулятор</button>
+      <button class="tab" data-tab="preview">Предпросмотр</button>
+      <button class="tab" data-tab="works">Каталог работ</button>
+      <button class="tab" data-tab="rooms">Помещения</button>
+      <button class="tab" data-tab="company">Реквизиты</button>
+      <button class="tab" data-tab="archive">Архив <span class="badge" id="archiveBadge">0</span></button>
+    </nav>
+
+    <div class="top-actions">
+      <button class="btn ghost" id="btnTheme" title="Переключить тему (светлая/тёмная)">☀️</button>
+      <button class="btn ghost" id="btnNew" title="Новый devis (Ctrl+N)">Новый</button>
+      <button class="btn ghost" id="btnSave" title="Сохранить (Ctrl+S)">Сохранить</button>
+      <button class="btn" id="btnXlsx" title="Экспорт в Excel (Ctrl+E)">Excel</button>
+      <button class="btn" id="btnPrint" title="Печать">Печать</button>
+      <button class="btn accent" id="btnPdf" title="Экспорт в PDF (Ctrl+P)">PDF</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+
+    <!-- ============ КАЛЬКУЛЯТОР ============ -->
+    <section class="tab-panel active" id="tab-calc">
+      <div class="cards">
+        <div class="card card-devis">
+          <div class="card-head">
+            <span class="dot"></span> Devis
+          </div>
+          <div class="field">
+            <label>Дата</label>
+            <input type="date" id="devDate">
+          </div>
+          <div class="field">
+            <label>Номер Devis (DDMMYYYY)</label>
+            <div class="number-box" id="devNumber">—</div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label>Валидность</label>
+              <input type="text" id="devValidity" placeholder="1 mois">
+            </div>
+            <div class="field">
+              <label>Descriptif</label>
+              <input type="text" id="devTitle" placeholder="Descriptif des travaux">
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="dot blue"></span> A l’attention de</div>
+          <div class="field"><label>NOM</label><input type="text" id="cliName" placeholder="Имя клиента"></div>
+          <div class="field"><label>AD</label><input type="text" id="cliAddr" placeholder="Адрес"></div>
+          <div class="field"><label>CP VILLE</label><input type="text" id="cliCity" placeholder="Горан / индекс"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="dot green"></span> Adresse du chantier</div>
+          <div class="field"><label>NOM</label><input type="text" id="siteName" placeholder="Имя (объект)"></div>
+          <div class="field"><label>AD</label><input type="text" id="siteAddr" placeholder="Адрес объекта"></div>
+          <div class="field"><label>CP VILLE</label><input type="text" id="siteCity" placeholder="Город / индекс"></div>
+        </div>
+      </div>
+
+      <div class="work-area">
+        <div class="table-card">
+          <div class="toolbar">
+            <div class="search">
+              <svg viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+              <input type="search" id="lineSearch" placeholder="Поиск по наименованию работ…">
+            </div>
+            <div class="select-wrap">
+              <select id="roomFilter"><option value="">Все помещения</option></select>
+            </div>
+            <div class="spacer"></div>
+            <button class="btn" id="btnAddRoom">＋ Помещение</button>
+            <button class="btn accent" id="btnAddLine">＋ Работа</button>
+          </div>
+
+          <div class="table-scroll">
+            <table class="lines">
+              <thead>
+                <tr>
+                  <th class="c-num">#</th>
+                  <th class="c-room">PIÈCE</th>
+                  <th class="c-desc">DESCRIPTION</th>
+                  <th class="c-qt">QT</th>
+                  <th class="c-pu">PU HT</th>
+                  <th class="c-unit">UNITÉ</th>
+                  <th class="c-total">TOTAL HT</th>
+                  <th class="c-x"></th>
+                </tr>
+              </thead>
+              <tbody id="linesBody"></tbody>
+            </table>
+            <div class="empty" id="linesEmpty">
+              <div class="empty-icon">＋</div>
+              <p>В devis пока нет строк</p>
+              <span>Выберите помещение и работу из каталога — метражи и цены подставятся автоматически</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="totals">
+          <div class="totals-head">Итого по devis</div>
+          <div class="tot-line"><span>TOTAL HT</span><strong id="totHT">0,00 €</strong></div>
+          <div class="tot-line sub">
+            <span>TVA <input type="number" id="tvaRate" min="0" max="100" step="0.5"> %</span>
+            <strong id="totTVA">0,00 €</strong>
+          </div>
+          <div class="tot-note" id="tvaLabel">TVA non applicable - art. 293B du CGI</div>
+          <div class="tot-line big"><span>TOTAL TTC</span><strong id="totTTC">0,00 €</strong></div>
+          <div class="tot-line sub">
+            <span>ACOMPTE <input type="number" id="acompteRate" min="0" max="100" step="5"> %</span>
+            <strong id="totAcompte">0,00 €</strong>
+          </div>
+          <div class="tot-line solde"><span>SOLDE</span><strong id="totSolde">0,00 €</strong></div>
+
+          <div class="stats">
+            <div class="stat"><b id="stLines">0</b><span>строк</span></div>
+            <div class="stat"><b id="stRooms">0</b><span>помещений</span></div>
+            <div class="stat"><b id="stQty">0</b><span>ед. объёма</span></div>
+          </div>
+
+          <div class="room-share" id="roomShare"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ ПРЕДПРОСМОТР ============ -->
+    <section class="tab-panel" id="tab-preview">
+      <div class="preview-bar">
+        <span class="hint">Документ в точности повторяет структуру примера — этот же рендер уходит в PDF и печать</span>
+        <div class="preview-actions">
+          <button class="btn" id="btnPrevXlsx">Excel</button>
+          <button class="btn" id="btnPrevPrint">Печать</button>
+          <button class="btn accent" id="btnPrevPdf">PDF</button>
+        </div>
+      </div>
+      <div class="preview-frame"><iframe id="devisFrame" title="Предпросмотр devis"></iframe></div>
+    </section>
+
+    <!-- ============ КАТАЛОГ РАБОТ ============ -->
+    <section class="tab-panel" id="tab-works">
+      <div class="toolbar sticky">
+        <div class="search">
+          <svg viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+          <input type="search" id="workSearch" placeholder="Поиск по каталогу Description…">
+        </div>
+        <div class="select-wrap">
+          <select id="unitFilter"><option value="">Все единицы</option></select>
+        </div>
+        <div class="spacer"></div>
+        <span class="counter" id="workCounter">0</span>
+        <button class="btn accent" id="btnSyncGsheet">⟳ Обновить данные</button>
+        <button class="btn" id="btnImportXlsx">Импорт Excel</button>
+        <button class="btn accent" id="btnAddWork">＋ Работа</button>
+      </div>
+      <div class="table-card flush">
+        <table class="catalog">
+          <thead>
+            <tr><th class="c-id">ID</th><th>DESCRIPTION — наименование работы</th><th class="c-pu">PU HT</th><th class="c-unit">UNITÉ</th><th class="c-x"></th></tr>
+          </thead>
+          <tbody id="worksBody"></tbody>
+        </table>
+        <div class="empty" id="worksEmpty"><div class="empty-icon">⌕</div><p>Ничего не найдено</p></div>
+      </div>
+    </section>
+
+    <!-- ============ ПОМЕЩЕНИЯ ============ -->
+    <section class="tab-panel" id="tab-rooms">
+      <div class="toolbar sticky">
+        <div class="search">
+          <svg viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+          <input type="search" id="roomSearch" placeholder="Поиск помещения…">
+        </div>
+        <div class="spacer"></div>
+        <span class="counter" id="roomCounter">0</span>
+        <div class="add-inline">
+          <input type="text" id="newRoomInput" placeholder="Новое помещение, напр. «Bureau 1»">
+          <button class="btn accent" id="btnAddRoom2">＋ Добавить</button>
+        </div>
+      </div>
+      <div class="rooms-grid" id="roomsGrid"></div>
+      <div class="empty" id="roomsEmpty"><div class="empty-icon">⌂</div><p>Список помещений пуст</p></div>
+    </section>
+
+    <!-- ============ РЕКВИЗИТЫ ============ -->
+    <section class="tab-panel" id="tab-company">
+      <div class="company-grid">
+        <div class="card">
+          <div class="card-head"><span class="dot"></span> Шапка документа</div>
+          <div class="field"><label>Строка компании (B1)</label><input type="text" id="cmpHeader"></div>
+          <div class="field"><label>Заголовок работ</label><input type="text" id="cmpTitle"></div>
+          <div class="field"><label>Валидность по умолчанию</label><input type="text" id="cmpValidity"></div>
+          <div class="field"><label>Строка подписи</label><input type="text" id="cmpSignature"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="dot green"></span> Условия и настройки</div>
+          <div class="field">
+            <label>Conditions de règlement — по строке на строку</label>
+            <textarea id="cmpConditions" rows="12"></textarea>
+          </div>
+          <div class="row2">
+            <div class="field"><label>Подпись TVA</label><input type="text" id="setTvaLabel"></div>
+            <div class="field"><label>TVA по умолчанию, %</label><input type="number" id="setTva" min="0" max="100" step="0.5"></div>
+            <div class="field"><label>ACOMPTE по умолчанию, %</label><input type="number" id="setAcompte" min="0" max="100" step="5"></div>
+          </div>
+          <div class="field" style="margin-top:10px">
+            <label>Google Таблица — ссылка на каталог (File → Share → Anyone with the link)</label>
+            <input type="text" id="setGsheetUrl" placeholder="https://docs.google.com/spreadsheets/d/…" style="font-size:12px">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><span class="dot blue"></span> Единицы измерения</div>
+          <div class="units-row" id="unitsRow"></div>
+          <div class="add-inline">
+            <input type="text" id="newUnitInput" placeholder="Например: MLO">
+            <button class="btn" id="btnAddUnit">＋</button>
+          </div>
+          <div class="hint-box">
+            Данные хранятся локально в <b>store.json</b> (папка данных приложения).
+            Кнопка «Импорт Excel» на вкладке «Каталог работ» считывает листы <b>Description</b> и <b>pièces</b> из любого файла .xlsx.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ АРХИВ ============ -->
+    <section class="tab-panel" id="tab-archive">
+      <div class="toolbar sticky">
+        <div class="search">
+          <svg viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+          <input type="search" id="archSearch" placeholder="Поиск: номер, клиент, адрес…">
+        </div>
+        <div class="spacer"></div>
+        <span class="counter" id="archCounter">0</span>
+      </div>
+      <div class="table-card flush">
+        <table class="catalog">
+          <thead>
+            <tr><th>NUMÉRO</th><th>DATE</th><th>CLIENT</th><th>ADRESSE</th><th class="c-pu">HT</th><th class="c-actions"></th></tr>
+          </thead>
+          <tbody id="archBody"></tbody>
+        </table>
+        <div class="empty" id="archEmpty"><div class="empty-icon">⟲</div><p>Архив пуст — сохраните первый devis</p></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="toaster" id="toaster"></div>
+  <div class="modal-backdrop" id="modalRoot" hidden></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
