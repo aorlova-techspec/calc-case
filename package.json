@@ -41,7 +41,7 @@
       "node_modules/call-bind-apply-helpers/**/*"
     ],
     "directories": {
-      "output": "release-102"
+      "output": "release"
     },
     "afterPack": "tools/after-pack.js",
     "win": {
